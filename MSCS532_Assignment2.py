@@ -88,6 +88,7 @@ totalMemorySize = originalMemorySize + additionalMemorySize
 print("Original memory size", originalMemorySize)
 print("Additional memory used", additionalMemorySize)
 print("Total memory used", totalMemorySize)
+print("sortedArray", sortedArray)
 
 
 print("")
@@ -106,6 +107,7 @@ totalMemorySize = originalMemorySize + additionalMemorySize
 print("Original memory size", originalMemorySize)
 print("Additional memory used", additionalMemorySize)
 print("Total memory used", totalMemorySize)
+print("sortedArray", reverseSortedArray)
 
 print("")
 print("Applying merge sort to array 3 which is random sorted")
@@ -123,6 +125,7 @@ totalMemorySize = originalMemorySize + additionalMemorySize
 print("Original memory size", originalMemorySize)
 print("Additional memory used", additionalMemorySize)
 print("Total memory used", totalMemorySize)
+print("sortedArray", randomSortedArray)
 
 
 ########### Quick Sort implementation #############
@@ -177,17 +180,17 @@ def quick_sort_using_leftmost_element(array, low, high):
 def partition_using_left_most(array, low, high):
     # partition_using_right_most the right element as partition
     pivot = array[low]
-    i = low - 1
+    i = low
 
-    for j in range(low, high):
+    for j in range(low + 1, high + 1):
         if array[j] < pivot:
             i += 1
             # swapping smaller with higher vale
             array[i], array[j] = array[j], array[i]
 
     # Putting the pivot element in the correct position
-    array[i + 1], array[high] = array[high], array[i + 1]
-    return i + 1
+    array[low], array[i] = array[i], array[low]
+    return i
 
     ## Creating a method to implment quick sort
 
@@ -207,8 +210,9 @@ def quick_sort_using_mid_element(array, low, high):
 # Implementing partition
 def partition_using_mid(array, low, high):
     # partition_using_right_most the right element as partition
-    mid = len(array) // 2
+    mid = (low + high) // 2
     pivot = array[mid]
+    array[mid], array[high] = array[high], array[mid]
     i = low - 1
 
     for j in range(low, high):
@@ -224,12 +228,6 @@ def partition_using_mid(array, low, high):
 
 # Use cases with different array lists
 sortedArray = list(range(0, 500))  # Sorted array from 1 to 499
-reverseSortedArray = list(range(500, 0, -1))  # Reverse sorted array from 499 to 1
-randomSortedArray = [
-    random.randint(1, 500) for _ in range(500)
-]  # Random array of size 500
-
-
 # Applying merge sort in the above arrays
 print("")
 print("*************** Quick Sort Implementation for sorted element **************")
@@ -241,7 +239,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
-
+print("sorted element", sortedArray)
 
 print("Applying quick sort to array 1 which is sorted using left most element")
 print("")
@@ -252,7 +250,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
-
+print("sorted element", sortedArray)
 
 print("Applying quick sort to array 1 which is sorted using mid element")
 print("")
@@ -263,7 +261,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
-
+print("sorted element", sortedArray)
 
 print("")
 print(
@@ -278,6 +276,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
+print("sorted element", reverseSortedArray)
 
 reverseSortedArray = list(range(500, 0, -1))
 print("")
@@ -288,6 +287,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
+print("sorted element", reverseSortedArray)
 
 reverseSortedArray = list(range(500, 0, -1))
 print("")
@@ -298,7 +298,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
-
+print("sorted element", reverseSortedArray)
 
 print("")
 print(
@@ -315,6 +315,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
+print("sorted element", randomSortedArray)
 
 randomSortedArray = [
     random.randint(1, 500) for _ in range(500)
@@ -327,6 +328,7 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
+print("sorted element", randomSortedArray)
 
 randomSortedArray = [
     random.randint(1, 500) for _ in range(500)
@@ -340,3 +342,4 @@ endTime = time.time()
 print("Start time for sort process", startTime)
 print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
+print("sorted element", randomSortedArray)
