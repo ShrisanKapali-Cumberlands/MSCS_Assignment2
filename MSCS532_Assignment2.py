@@ -241,8 +241,8 @@ print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
 print("sorted element", sortedArray)
 
-print("Applying quick sort to array 1 which is sorted using left most element")
 print("")
+print("Applying quick sort to array 1 which is sorted using left most element")
 sortedArray = list(range(0, 500))  # Sorted array from 1 to 499
 startTime = time.time()
 quick_sort_using_leftmost_element(sortedArray, 0, len(sortedArray) - 1)
@@ -252,8 +252,8 @@ print("End time for sort process", endTime)
 print(f"Execution time: {endTime - startTime:.6f} seconds")
 print("sorted element", sortedArray)
 
-print("Applying quick sort to array 1 which is sorted using mid element")
 print("")
+print("Applying quick sort to array 1 which is sorted using mid element")
 sortedArray = list(range(0, 500))  # Sorted array from 1 to 499
 startTime = time.time()
 quick_sort_using_mid_element(sortedArray, 0, len(sortedArray) - 1)
@@ -305,7 +305,7 @@ print(
     "*************** Quick Sort Implementation for random sort element **************"
 )
 print("")
-print("Applying quick sort to array 2 which is reverse sorted using right most element")
+print("Applying quick sort to array 2 which is random sorted using right most element")
 randomSortedArray = [
     random.randint(1, 500) for _ in range(500)
 ]  # Random array of size 500
@@ -321,7 +321,7 @@ randomSortedArray = [
     random.randint(1, 500) for _ in range(500)
 ]  # Random array of size 500
 print("")
-print("Applying quick sort to array 1 which is reverse sorted using left most element")
+print("Applying quick sort to array 1 which is random sorted using left most element")
 startTime = time.time()
 quick_sort_using_leftmost_element(randomSortedArray, 0, len(randomSortedArray) - 1)
 endTime = time.time()
@@ -335,7 +335,7 @@ randomSortedArray = [
 ]  # Random array of size 500
 print("")
 print("")
-print("Applying quick sort to array 1 which is  reverse sorted using mid element")
+print("Applying quick sort to array 1 which is random sorted using mid element")
 startTime = time.time()
 quick_sort_using_mid_element(randomSortedArray, 0, len(randomSortedArray) - 1)
 endTime = time.time()
